@@ -49,15 +49,15 @@ export default async function tunnelmole(options : Options): Promise<string>
             domain = domain.replace('http://', '');
             domain = domain.replace('https://', '');
 
-            if (!validator.isURL(domain)) {
-                console.info("Invalid domain name passed, please use the format mydomain.tunnelmole.net");
-                return Promise.resolve();
-            }
+            // if (!validator.isURL(domain)) {
+            //     console.info("Invalid domain name passed, please use the format mydomain.tunnelmole.net");
+            //     return Promise.resolve();
+            // }
 
-            const domainParts = domain.split('.');
-            const subdomain = domainParts[0];
+            // const domainParts = domain.split('.');
+            // const subdomain = domainParts[0];
 
-            initialiseMessage.subdomain = subdomain;
+            initialiseMessage.subdomain = domain;
         }
 
         websocket.sendMessage(initialiseMessage);

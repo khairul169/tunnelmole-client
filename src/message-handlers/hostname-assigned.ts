@@ -10,12 +10,12 @@ export default async function hostnameAssigned(message: HostnameAssignedMessage,
         console.error('Please specify a port e.g. run "tmole 80"');
     }
 
-    const httpUrl = `http://${message.hostname}`;
+    // const httpUrl = `http://${message.hostname}`;
     const httpsUrl = `https://${message.hostname}`;
 
 
     if (process.env.TUNNELMOLE_QUIET_MODE !== '1') {
-        console.info(`${httpUrl} is forwarding to localhost:${port}`);
+        // console.info(`${httpUrl} is forwarding to localhost:${port}`);
         console.info(`${httpsUrl} is forwarding to localhost:${port}`);
     }
     

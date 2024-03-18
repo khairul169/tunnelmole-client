@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import multer from 'multer';
 
-const app = express();
+const app: any = express();
 
 const upload = multer({dest: '/tmp'});
 
