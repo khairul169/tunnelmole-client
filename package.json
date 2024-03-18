@@ -1,5 +1,5 @@
 {
-  "name": "tunnelmole",
+  "name": "@khairul169/tunnel",
   "version": "2.2.14",
   "description": "Tunnelmole, an open source ngrok alternative. Instant public URLs for any http/https based application. Available as a command line application or as an NPM dependency for your code. Stable and maintained. Good test coverage. Works behind firewalls",
   "main": "dist/src/index.js",
@@ -28,7 +28,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/robbie-cahill/tunnelmole-client.git"
+    "url": "https://github.com/khairul169/tunnelmole-client.git"
   },
   "scripts": {
     "build": "tsc -p ./",
@@ -44,11 +44,11 @@
     "build-windows-bin": "pkg tunnelmole.bundle.js --targets node18-win-x64 --output tmole.exe",
     "build-all-bin": "npm run build && npm run rollup && npm run build-linux-bin && npm run build-mac-bin && npm run build-windows-bin",
     "postinstall": "node cjs/bin/postinstall.js",
-    "prepublishOnly": "node -e \"if (require('fs').existsSync('./.nopublish')) process.exit(1)\""
+    "prepublishOnly": "node -e \"if (require('fs').existsSync('./.nopublish')) process.exit(1)\"",
+    "publish": "npm publish --access public ."
   },
   "bin": {
-    "tmole": "dist/bin/tunnelmole.js",
-    "tunnelmole": "dist/bin/tunnelmole.js"
+    "tunnel": "dist/bin/tunnelmole.js"
   },
   "author": "Robbie Cahill",
   "license": "MIT",
@@ -74,7 +74,6 @@
     "node-localstorage": "^2.1.6",
     "source-map-support": "^0.5.21",
     "toml": "^3.0.0",
-    "tunnelmole": "^2.1.5",
     "validator": "^13.0.0",
     "ws": "^7.2.5"
   },
